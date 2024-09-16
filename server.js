@@ -27,8 +27,8 @@ app.post('/convert', async (req, res) => {
 
         // Decodificar el base64 a binario
         const buffer = Buffer.from(file, 'base64');
-        const inputFilePath = path.join(__dirname, 'input.3gp');
-        const outputFilePath = path.join(__dirname, 'output.wav');
+        const inputFilePath = path.join('tmp', 'input.3gp');
+        const outputFilePath = path.join('tmp', 'output.wav');
 
         // Guardar temporalmente el archivo .3gp
         fs.writeFileSync(inputFilePath, buffer);
