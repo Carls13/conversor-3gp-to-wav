@@ -4,6 +4,7 @@ const ffmpeg = require('fluent-ffmpeg');
 const ffmpegPath = require('ffmpeg-static');
 const fs = require('fs');
 const path = require('path');
+const serverless = require('serverless-http');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -59,4 +60,4 @@ app.post('/convert', async (req, res) => {
     }
 });
 
-module.exports = app;
+module.exports.handler = serverless(app);
