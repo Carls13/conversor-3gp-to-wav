@@ -60,4 +60,6 @@ app.post('/convert', async (req, res) => {
     }
 });
 
-module.exports.handler = serverless(app);
+module.exports = (req, res) => {
+    res.status(200).json({ message: "¡Hola desde Railway Serverless!" });
+};
